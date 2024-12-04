@@ -15,14 +15,24 @@ namespace BPNN
     {
         NeuralNet nn;
         int epoch_ctr = 0;
+        
         public Form1()
         {
             InitializeComponent();
+            textBox6.Text = "Number of epoch: 0";
+            label1.Text = "Minimum number of hidden neurons: 2.\n"+
+                "   but requires 1400 to 2000+ training epochs\n" +
+                "   for it to produce the correct output.\n" +
+                "\nMinimum number of training epochs: 100\n" + 
+                "   but it requires 125 hidden neurons.\n"+
+                "   for it to produce the correct output.";
+
+            label2.Text = "10 iteration per click";
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            nn = new NeuralNet(4,95,1);
+            nn = new NeuralNet(4,100,1);
         }
 
         private void button2_Click(object sender, EventArgs e)
